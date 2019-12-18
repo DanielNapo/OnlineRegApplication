@@ -19,10 +19,12 @@ public interface Linkable {
 	String SEARCHINITIALIZE_PAGE = "searchInitialize_Page.jsp";
 	String SEARCHAPPLICANT_PAGE = "searchApplicant.jsp";
 	String SEARCHRESULTS_PAGE = "searchRecordResults.jsp";
+	String SEARCHALLRESULTS_PAGE = "searchAllRecordResults.jsp";
 	String REGISTER = "register";
 	String SEARCH = "search";
 	String REGISTER_APPLICANT = "registerApplicant";
 	String SEARCH_APPLICANT = "searchApplicant";
+	String SEARCHALLAPPLICANTS = "searchAllApplicants";
 	String HOME = "home";
 	
 }

@@ -43,14 +43,15 @@
 	</div>
 	<br>
 	<div style="text-align: center;font-family: sans-serif;font-weight: bold;color: #228B22">
-		<p>Please click the below "Search" link to search for an applicant</p>
+		<p>Search for a particular applicant or get full report of registered applicants</p>
 	</div>
 	<br>
 	<br>
 	<div style="text-align: center;font-family: sans-serif;font-weight: bold;color: #000080">
 		<table align="center" style="text-align: left;">
 
-			<tr><th><a class="button" href="<%=request.getContextPath()%>/OnlineRegApplication?view=searchApplicant">Search</a></th></tr>
+			<tr><th><a class="button" href="<%=request.getContextPath()%>/OnlineRegApplication?view=searchApplicant">Individual Report</a></th>
+			<th><a class="button" href="<%=request.getContextPath()%>/OnlineRegApplication?view=searchAllApplicants">Full Report</a></tr>
 			
 		</table>
 	</div>

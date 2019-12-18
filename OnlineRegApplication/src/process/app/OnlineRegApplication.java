@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -67,8 +69,16 @@ public class OnlineRegApplication extends HttpServlet implements Linkable{
 						rd = request.getRequestDispatcher(JSP_PATH+SEARCHINITIALIZE_PAGE);
 						rd.forward(request, response);
 						
+					}else{
+						
+						if(viewPage.equals(SEARCHALLAPPLICANTS)){
+							
+							doPost(request,response);
+							
+						}
+						
 					}
-					
+		
 				}
 				
 			}
@@ -267,6 +277,43 @@ public class OnlineRegApplication extends HttpServlet implements Linkable{
 							
 						}
 									
+					}else{
+						
+						if(viewPage.equals(SEARCHALLAPPLICANTS)){
+							
+							ArrayList<Applicant_Details> fullReport = new ArrayList<Applicant_Details>();
+							
+							/***Will complete this block of code later**/	
+							
+							conn = myConnect.getConnectionPool();
+							
+							PreparedStatement Stat = conn.prepareStatement("SELECT * FROM PersonalInfo;");
+							
+							/**Executing the query**/
+							ResultSet rs = Stat.executeQuery();
+							
+							/**iterates over the result set...**/
+							
+							while (rs.next()) {
+								
+								Applicant_Details applicant = new Applicant_Details();
+								
+								applicant.setRecordId(rs.getString("ID"));
+								applicant.setFullName(rs.getString("FULL_NAME"));
+								applicant.setIDNumber(rs.getString("ID_NUMBER"));
+								
+								fullReport.add(applicant);
+								
+							}
+							
+							RequestDispatcher rd = null;
+							request.setAttribute("fullReport", fullReport);
+							rd = request.getRequestDispatcher(JSP_PATH+SEARCHALLRESULTS_PAGE);
+							rd.forward(request, response);
+							
+						
+						}
+						
 					}
 					
 				}
