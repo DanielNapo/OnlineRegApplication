@@ -40,28 +40,6 @@ public class Applicant_Details {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Applicant_Details userDetail = new Applicant_Details();
-		
-		List<Applicant_Details> applicant = new ArrayList<Applicant_Details>();
-		
-		userDetail.setFullName("Daniel Napo");
-		userDetail.setIDNumber("1234567890321");
-		userDetail.setRecordId("1");
-		
-		applicant.add(userDetail);
-		
-		Iterator<Applicant_Details> iterator = applicant.iterator();
-		
-		while(iterator.hasNext()){
-			
-			System.out.println(iterator.next().getFullName());
-			
-		}
-		
-		
-		
-		
-		
 
 	}
 
